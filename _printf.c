@@ -1,46 +1,71 @@
+#include <stdio.h>
 #include "main.h"
-#include <stdarg.h>
-/**
- * _printf - Custom printf function
- * @format: Format specifier
- *
- * Return: Number of characters printed (excluding null byte)
- */
+#include "string.h"
+#include <unistd.h>
+#include "stdarg.h"
+
 int _printf(const char *format, ...)
 {
-	unsigned int i, s_count, count = 0;
+	int case_count = 0;
+	int i = 0;
 
-	va_list args;
-
-	  if (!format || (format[0] == '%' && format[1] == '\0'))
-                 return (-1);
-
-	va_start(args, format);
-
-	for (i = 0; format[i] != '\0'; i++)
+	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] != '%')
+		case_count = 0;
+		if (format[i] == '%')
 		{
-			_putchar(format[i]);
-		}
-		else if (format[i + 1] == 'c')
-		{
-			_putchar(va_arg(args, int));
 			i++;
-		}
-		else if (format[i + 1] == 's')
-		{
-			s_count = putss(va_arg(args, char *));
-			i++;
-			count += (s_count - 1);
-		}
-		else if (format[i + 1] == '%')
-		{
-			_putchar('%');
-		}
-		count += 1;
-	}
+		switch (format[i])
 
-	va_end(args);
-	return (count);
+			{
+		case 'c':
+		write(1, "-PRINTC-", 8);
+		case_count++;
+		break;
+
+		case 's':
+		write(1, "-PRINTS-", 8);
+		case_count++;
+		break;
+
+		case 'd':
+		write(1, "-PRINTD-", 8);
+		case_count++;
+		break;
+
+		case 'i':
+		write(1, "-PRINTI-", 8);
+		case_count++;
+		break;
+
+		case 'u':
+		write(1, "-PRINTU-", 8);
+		case_count++;
+		break;
+
+		case 'p':
+		write(1, "-PRINTP-", 8);
+		case_count++;
+		break;
+
+		case 'r':
+		write(1, "-PRINTR-", 8);
+		case_count++;
+		break;
+
+		case '%':
+		write(1, &format[i], 1);
+		case_count++;
+		break;
+
+		default:			
+		i--- 
+		}
+
+		}
+		if (case_count == 0) 
+		write(1, &format[i], 1);
+		i++;
+	}
+	return (0);
 }
