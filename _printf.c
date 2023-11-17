@@ -9,53 +9,45 @@ int _printf(const char *format, ...)
 	int case_count = 0;
 	int i = 0;
 
-	while (format != NULL && format[i] != '\0')
+		va_start(ap, format);
+
+	if (format != NULL)
 	{
-		case_count = 0;
+		while (format[i])
+		{
+		
 		if (format[i] == '%')
 		{
+		i++;
+			
+		while (format[i] == ' ')
+				{
 			i++;
+			wht_spc++;
+				}
 		switch (format[i])
 
 			{
 		case 'c':
-		write(1, "-PRINTC-", 8);
-		case_count++;
+		count += int _char(char c)
 		break;
 
 		case 's':
-		write(1, "-PRINTS-", 8);
-		case_count++;
-		break;
-
-		case 'd':
-		write(1, "-PRINTD-", 8);
-		case_count++;
-		break;
-
-		case 'i':
-		write(1, "-PRINTI-", 8);
-		case_count++;
-		break;
-
-		case 'u':
-		write(1, "-PRINTU-", 8);
-		case_count++;
-		break;
-
-		case 'p':
-		write(1, "-PRINTP-", 8);
-		case_count++;
-		break;
-
-		case 'r':
-		write(1, "-PRINTR-", 8);
-		case_count++;
+		count += int p_char(char c)
 		break;
 
 		case '%':
 		write(1, &format[i], 1);
+		count++;
+		break;
+
+		case 'i':
+		write(1, "int_char", 8);
 		case_count++;
+		break;
+
+		case 'd':
+		count += char_int(char *s)
 		break;
 
 		default:			
@@ -64,9 +56,27 @@ int _printf(const char *format, ...)
 		}
 
 		}
-		if (case_count == 0) 
+			if (case_count == 0) 
 		write(1, &format[i], 1);
 		i++;
+		count += p_default(format[i]);
+		i++;
+
+			break;
+		}
+
+		}
+			else
+		{
+		write(1, &format[i], 1);
+		count++;
+			}
+		i++;
+		}
+		va_end(ap);
+			return (count);
+		}
+			else
+		va_end(ap);
+			return (-1);
 	}
-	return (0);
-}
