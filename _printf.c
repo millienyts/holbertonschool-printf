@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 		switch (format[i])
 
 			{
-		case 'c':
+case 'c':
 		write(1, "-PRINTC-", 8);
 		case_count++;
 		break;
@@ -59,7 +59,8 @@ int _printf(const char *format, ...)
 		break;
 
 		default:			
-		i--- 
+	
+ 		i--;
 		}
 
 		}
