@@ -1,82 +1,39 @@
 #include <stdio.h>
 #include "main.h"
-#include "string.h"
-#include <unistd.h>
 #include "stdarg.h"
-
-int _printf(const char *format, ...)
+int _printf(const char *format, ...) 
 {
-	int case_count = 0;
-	int i = 0;
+	int i;
+	int num_written = 0;
+	va_list args;
+	va_start(args, format);
 
-		va_start(ap, format);
-
-	if (format != NULL)
+	while (*format) 
 	{
-		while (format[i])
+		if (*format == '%')
 		{
-		
-		if (format[i] == '%')
-		{
-		i++;
-			
-		while (format[i] == ' ')
-				{
-			i++;
-			wht_spc++;
-				}
-		switch (format[i])
-
+			switch (*++format) 
 			{
-		case 'c':
-		count += int _char(char c)
-		break;
-
-		case 's':
-		count += int p_char(char c)
-		break;
-
-		case '%':
-		write(1, &format[i], 1);
-		count++;
-		break;
-
-		case 'i':
-		write(1, "int_char", 8);
-		case_count++;
-		break;
-
-		case 'd':
-		count += char_int(char *s)
-		break;
-
-		default:			
-	
- 		i--;
-		}
-
-		}
-			if (case_count == 0) 
-		write(1, &format[i], 1);
-		i++;
-		count += p_default(format[i]);
-		i++;
-
-			break;
-		}
-
-		}
-			else
-		{
-		write(1, &format[i], 1);
-		count++;
+				case 'c':
+			i += _putchar((int)va_arg(args, int));
+				break;
+				case 's':
+			i += _puts(va_arg(args, char *));
+				break;
+				case '%':
+			i += _putchar('%');
+				break;
+				default:
+			i += _printf("%%");
+				break;
 			}
-		i++;
 		}
-		va_end(ap);
-			return (count);
+		else
+		{
+			i += _putchar(*format);
 		}
-			else
-		va_end(ap);
-			return (-1);
+		format++;
 	}
+	va_end(args);
+	return (num_written);
+}
