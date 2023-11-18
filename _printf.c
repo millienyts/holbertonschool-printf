@@ -1,39 +1,45 @@
 #include <stdio.h>
+#include <stdarg.h>
 #include "main.h"
-#include "stdarg.h"
-int _printf(const char *format, ...) 
+/**
+ *
+ */
+extern int puts(const char *string);
+
+int _printf(const char *format, ...)
 {
-	int i;
-	int num_written = 0;
 	va_list args;
+	int n = 0;
+	const char *p = format;
+
 	va_start(args, format);
 
-	while (*format) 
+	while (*p != '\0')
 	{
-		if (*format == '%')
+		if (*p == '%') 
 		{
-			switch (*++format) 
+			p++;
+			switch (*p)
 			{
-				case 'c':
-			i += _putchar((int)va_arg(args, int));
-				break;
-				case 's':
-			i += _puts(va_arg(args, char *));
-				break;
-				case '%':
-			i += _putchar('%');
-				break;
-				default:
-			i += _printf("%%");
-				break;
+		case 'c':
+			n += putchar(va_arg(args, int));
+			break;
+		case 's':
+			n += puts(va_arg(args, char *));
+			break;
+		case '%':
+			n += putchar('%');
+			break;
+		default:
+			break;
 			}
-		}
-		else
+			p++;
+		} else
 		{
-			i += _putchar(*format);
+			n += putchar(*p);
+			p++;
 		}
-		format++;
 	}
 	va_end(args);
-	return (num_written);
+	return (n);
 }
