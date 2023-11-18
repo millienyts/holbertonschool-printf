@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			n += putchar('%');
 			break;
 		default:
-			n += _printf("%%");
+
 			break;
 			}
 			p++;
