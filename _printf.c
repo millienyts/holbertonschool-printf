@@ -1,46 +1,46 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "main.h"
 /**
  * _printf - creating de function of printf
  * @format: a character string
- *
  * Return: the number of character printed
  */
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int n = 0;
-	const char *p = format;
 
 	va_start(args, format);
-
-	while (*p != '\0')
+	while (*format != '\0')
 	{
-		if (*p == '%')
+		if (*format == '%')
 		{
-			p++;
-			switch (*p)
+			switch (*++format)
 			{
-		case 'c':
-			n += putchar(va_arg(args, int));
-			break;
-		case 's':
-			n += puts(va_arg(args, char *));
-			break;
-		case '%':
-			n += putchar('%');
-			break;
-		default:
+			case 'c':{
+				char c = (char) va_arg(args, int);
 
+				n += putchar(c);
+			break;
+				}
+			case 's':
+				{
+				const char *s = va_arg(args, const char *);
+
+				while (*s != '\0')
+				n += putchar(*s++);
+			break;
+				}
+			case '%':
+				n += putchar('%');
+			break;
+			default:
 			break;
 			}
-			p++;
 		} else
 		{
-			n += putchar(*p);
-			p++;
+			n += putchar(*format);
 		}
+		format++;
 	}
 	va_end(args);
 	return (n);
