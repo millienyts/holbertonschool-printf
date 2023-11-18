@@ -2,10 +2,11 @@
 #include <stdarg.h>
 #include "main.h"
 /**
+ * _printf - creating de function of printf
+ * @format: a character string
  *
+ * Return: the number of character printed
  */
-extern int puts(const char *string);
-
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -16,7 +17,7 @@ int _printf(const char *format, ...)
 
 	while (*p != '\0')
 	{
-		if (*p == '%') 
+		if (*p == '%')
 		{
 			p++;
 			switch (*p)
@@ -31,6 +32,7 @@ int _printf(const char *format, ...)
 			n += putchar('%');
 			break;
 		default:
+			n += _printf("%%");
 			break;
 			}
 			p++;
