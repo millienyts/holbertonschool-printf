@@ -1,15 +1,11 @@
-#include <stdio.h>
 #include "main.h"
-#include "string.h"
-#include <unistd.h>
-#include "stdarg.h"
 
 int _printf(const char *format, ...)
 {
 	int case_count = 0;
 	int i = 0;
 
-		va_start(ap, format);
+	va_start(ap, format);
 
 	if (format != NULL)
 	{

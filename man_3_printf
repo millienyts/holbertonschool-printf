@@ -1,0 +1,37 @@
+.TH man_3_printf  printf\-0.1 
+.SH NAME
+\_printf - Create a man page for your function.
+
+.SH SYNOPSIS
+.B #include "main.h"
+
+.SH DESCRIPTION
+The print command is used to print a file directly without using a Windows application that supports printing it sends the contents of the active window. 
+
+.SH CONVERSION SPECIFIERS
+
+.TP
+.B %c
+Converts an int argument into an unsigned char, and writes the resulting character.
+
+.TP
+.B %s
+Iterates over the pointer char * until '\0' is reached, printing each character using putchar.
+
+.TP
+.B %%
+Prints the special character "%".
+
+.TP
+.B %d
+Prints decimal numbers.
+
+.TP
+.B %i
+Prints integers.
+
+.SH EXAMPLES
+.B _printf("Feliz Navidad\n");
+
+.SH AUTHOR
+Millieny Torres Santa & Adriel Ortiz Sanchez
