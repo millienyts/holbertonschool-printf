@@ -1,4 +1,5 @@
 #include "main.h"
+<<<<<<< HEAD
 
 int _printf(const char *format, ...)
 {
@@ -6,73 +7,45 @@ int _printf(const char *format, ...)
 	int i = 0;
 
 	va_start(ap, format);
+=======
+/**
+ * _printf - creating de function of printf
+ * @format: a character string
+ * Return: the number of character printed
+ */
+int _printf(const char *format, ...)
+{
+	va_list args;
+	int n = 0;
+>>>>>>> 13becb2fa2b8d9bd235674543ccb949c6c0dd3c2
 
-	if (format != NULL)
+	va_start(args, format);
+	while (*format != '\0')
 	{
-		while (format[i])
+		if (*format == '%')
 		{
-		
-		if (format[i] == '%')
-		{
-		i++;
-			
-		while (format[i] == ' ')
-				{
-			i++;
-			wht_spc++;
-				}
-		switch (format[i])
-
+			switch (*++format)
 			{
-		case 'c':
-		count += int _char(char c)
-		break;
+			case 'c':{
+				char c = (char) va_arg(args, int);
 
-		case 's':
-		count += int p_char(char c)
-		break;
+				n += write(1, &c, 1);
+			break; }
+			case 's':{
+				const char *s = va_arg(args, const char *);
 
-		case '%':
-		write(1, &format[i], 1);
-		count++;
-		break;
-
-		case 'i':
-		write(1, "int_char", 8);
-		case_count++;
-		break;
-
-		case 'd':
-		count += char_int(char *s)
-		break;
-
-		default:			
-	
- 		i--;
-		}
-
-		}
-			if (case_count == 0) 
-		write(1, &format[i], 1);
-		i++;
-		count += p_default(format[i]);
-		i++;
-
+				while (*s != '\0')
+				n += write(1, s++, 1);
+			break; }
+			case '%':
+				n += write(1, "%", 1);
 			break;
-		}
-
-		}
-			else
-		{
-		write(1, &format[i], 1);
-		count++;
-			}
-		i++;
-		}
-		va_end(ap);
-			return (count);
-		}
-			else
-		va_end(ap);
-			return (-1);
+			default:
+			break; }
+		} else
+			n += write(1, format, 1);
+		format++;
 	}
+	va_end(args);
+	return (n);
+}
