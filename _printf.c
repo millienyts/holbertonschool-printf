@@ -19,27 +19,21 @@ int _printf(const char *format, ...)
 			case 'c':{
 				char c = (char) va_arg(args, int);
 
-				n += putchar(c);
-			break;
-				}
-			case 's':
-				{
+				n += write(1, &c, 1);
+			break; }
+			case 's':{
 				const char *s = va_arg(args, const char *);
 
 				while (*s != '\0')
-				n += putchar(*s++);
-			break;
-				}
+				n += write(1, s++, 1);
+			break; }
 			case '%':
-				n += putchar('%');
+				n += write(1, "%", 1);
 			break;
 			default:
-			break;
-			}
+			break; }
 		} else
-		{
-			n += putchar(*format);
-		}
+			n += write(1, format, 1);
 		format++;
 	}
 	va_end(args);
