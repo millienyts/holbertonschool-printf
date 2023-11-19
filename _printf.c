@@ -23,9 +23,11 @@ int _printf(const char *format, ...)
 			break; }
 			case 's':{
 				const char *s = va_arg(args, const char *);
+				size_t len = strlen(s);
 
-				while (*s != '\0')
-				n += write(1, s++, 1);
+				if (s == NULL)
+					s = "(null)";
+				n += write(1, s, len);
 			break; }
 			case '%':
 				n += write(1, "%", 1);
@@ -33,6 +35,7 @@ int _printf(const char *format, ...)
 			default:
 			break; }
 		}
+		else
 			n += write(1, format, 1);
 		format++;
 	}
