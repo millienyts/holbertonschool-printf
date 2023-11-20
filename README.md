@@ -7,6 +7,7 @@ In this project we create our printf function found in the C programming languag
 
 # Format String
 
+
 # %c: Print a single character.
 
 char myChar = 'A';
