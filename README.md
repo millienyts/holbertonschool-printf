@@ -7,6 +7,7 @@ In this project we create our printf function found in the C programming languag
 
 # Format String
 
+In programming, a format string is a string that contains placeholders or format specifiers, which are used to represent values that will be substituted into the string at runtime.
 
 # %c: Print a single character.
 
