@@ -1,7 +1,6 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
-#include <stdio.h>
 int print_char(va_list args)
 {
     char c = (char)va_arg(args, int);
@@ -66,4 +65,30 @@ int print_pointer(va_list args)
     char buffer[20];
     int length = sprintf(buffer, "%p", ptr);
     return write(1, buffer, length);
+}
+int print_specifier(char specifier, va_list args)
+{
+    switch (specifier)
+    {
+    case 'c':
+        return print_char(args);
+    case 's':
+        return print_string(args);
+    case '%':
+        return print_percent(args);
+    case 'd':
+    case 'i':
+        return print_int(args);
+    case 'u':
+        return print_unsigned(args);
+    case 'o':
+        return print_octal(args);
+    case 'x':
+    case 'X':
+        return print_hexadecimal(args, specifier);
+    case 'p':
+        return print_pointer(args);
+    default:
+	return (0);
+    }
 }
