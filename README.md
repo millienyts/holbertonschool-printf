@@ -2,7 +2,7 @@
 <<<<<<< HEAD
 Project Description
 
-In this project we create our printf.c function found in the C programming language
+In this project we create our printf function found in the C programming language.
 
 
 Format String
@@ -28,7 +28,7 @@ File Name
 
 _printf.c -  manages the array that encompasses all the format specifiers, and it also serves as the starting point for the execution of the function. 
 
-functions.c - This is the location where we have organized all the auxiliary functions utilized throughout our code.
+functions.c - This is the location where we have organized all the auxiliary functions utilized throughout our code
 
 main.h - The header file we used that serves as a repository for our prototypes and includes declarations for both our struct and the standard libraries utilized.
 
@@ -40,4 +40,4 @@ C - printf
 
 Credits
 
-Milieny Torres Santa & Adriel Ortiz Sanchez
+Millieny Torres Santa & Adriel Ortiz Sanchez
