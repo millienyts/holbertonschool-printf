@@ -25,7 +25,25 @@ int _printf(const char *format, ...)
 			case '%':
 				n += print_percent(args);
 			break;
+			case 'd':
+			case 'i':
+				n += print_int(args);
+			break;
+			case 'u':
+				n += print_unsigned(args);
+			break;
+			case 'o':
+				n += print_octal(args);
+			break;
+			case 'x':
+			case 'X':
+				n += print_hexadecimal(args, *format);
+			break;
+			case 'p':
+				n += print_pointer(args);
+			break;
 			default:
+				n += write(1, "%", *format);
 			break; }
 		}
 		else
