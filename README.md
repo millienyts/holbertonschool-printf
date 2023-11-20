@@ -1,4 +1,4 @@
-# holbertonschool-printf
+# C - printf
 
 # Description
 
