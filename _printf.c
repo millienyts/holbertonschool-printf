@@ -25,9 +25,6 @@ int _printf(const char *format, ...)
 			case '%':
 				n += print_percent(args);
 			break;
-			case 'r':
-				n += print_custom(args);
-			break;
 			case 'd':
 			case 'i':
 				n += print_int(args);
@@ -46,6 +43,7 @@ int _printf(const char *format, ...)
 				n += print_pointer(args);
 			break;
 			default:
+				n += write(1, "%", *format);
 			break; }
 		}
 		else

@@ -24,7 +24,7 @@ int print_percent(va_list args)
 int print_int(va_list args)
 {
     int value = va_arg(args, int);
-    char buffer[20]; // Adjust the size as needed
+    char buffer[20];
     int length = sprintf(buffer, "%d", value);
     return write(1, buffer, length);
 }
@@ -32,7 +32,7 @@ int print_int(va_list args)
 int print_unsigned(va_list args)
 {
     unsigned int value = va_arg(args, unsigned int);
-    char buffer[20]; // Adjust the size as needed
+    char buffer[20];
     int length = sprintf(buffer, "%u", value);
     return write(1, buffer, length);
 }
@@ -40,7 +40,7 @@ int print_unsigned(va_list args)
 int print_octal(va_list args)
 {
     unsigned int value = va_arg(args, unsigned int);
-    char buffer[20]; // Adjust the size as needed
+    char buffer[20];
     int length = sprintf(buffer, "%o", value);
     return write(1, buffer, length);
 }
@@ -48,7 +48,7 @@ int print_octal(va_list args)
 int print_hexadecimal(va_list args, char specifier)
 {
     unsigned int value = va_arg(args, unsigned int);
-    char buffer[20]; // Adjust the size as needed
+    char buffer[20];
     int length;
 
     if (specifier == 'x') {
@@ -63,7 +63,7 @@ int print_hexadecimal(va_list args, char specifier)
 int print_pointer(va_list args)
 {
     void *ptr = va_arg(args, void *);
-    char buffer[20]; // Adjust the size as needed
+    char buffer[20];
     int length = sprintf(buffer, "%p", ptr);
     return write(1, buffer, length);
 }
