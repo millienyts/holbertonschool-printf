@@ -1,5 +1,9 @@
 #include "main.h"
+<<<<<<< HEAD
  /**
+=======
+/**
+>>>>>>> adriel
  * _printf - creating de function of printf
  * @format: a character string
  * Return: the number of character printed
