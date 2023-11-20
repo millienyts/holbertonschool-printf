@@ -1,6 +1,6 @@
 # holbertonschool-printf
 <<<<<<< HEAD
-Project Description
+ Description
 
 In this project we create our printf function found in the C programming language.
 
