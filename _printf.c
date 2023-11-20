@@ -1,6 +1,5 @@
 #include "main.h"
-#include "functions.c"
-/**
+ /**
  * _printf - creating de function of printf
  * @format: a character string
  * Return: the number of character printed

@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <unistd.h>
 int print_char(va_list args)
 {
     char c = (char)va_arg(args, int);
