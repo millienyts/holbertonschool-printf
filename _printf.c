@@ -43,7 +43,8 @@ int _printf(const char *format, ...)
 				n += print_pointer(args);
 			break;
 			default:
-				n += write(1, "%", *format);
+				n += write(1, "%", 1);
+				n += write(1, format, 1);
 			break; }
 		}
 		else
