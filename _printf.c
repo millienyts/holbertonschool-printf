@@ -1,4 +1,5 @@
 #include "main.h"
+#include "functions.c"
 /**
  * _printf - creating de function of printf
  * @format: a character string
@@ -16,21 +17,14 @@ int _printf(const char *format, ...)
 		{
 			switch (*++format)
 			{
-			case 'c':{
-				char c = (char) va_arg(args, int);
-
-				n += write(1, &c, 1);
-			break; }
-			case 's':{
-				const char *s = va_arg(args, const char *);
-				size_t len = strlen(s);
-
-				if (s == NULL)
-					s = "(null)";
-				n += write(1, s, len);
-			break; }
+			case 'c':
+				n += print_char(args);
+			break;
+			case 's':
+				n += print_string(args);
+			break;
 			case '%':
-				n += write(1, "%", 1);
+				n += print_percent(args);
 			break;
 			default:
 			break; }
