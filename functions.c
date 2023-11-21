@@ -10,7 +10,7 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
     const char *s = va_arg(args, const char *);
-    size_t len = (s != NULL) ? strlen(s) : 6;
+    size_t len = (s != NULL) ? _strlen(s) : 6;
     return write(1, s, len);
 }
 
