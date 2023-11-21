@@ -89,6 +89,8 @@ int print_specifier(char specifier, va_list args)
     case 'p':
         return print_pointer(args);
     default:
-	return (0);
+	write(1, "%", 1);
+	write(1, &specifier, 1);
+	return (2);
     }
 }

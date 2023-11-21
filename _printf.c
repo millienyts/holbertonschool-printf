@@ -14,7 +14,14 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			n += print_specifier(*++format, args);
+			format++;
+				if (*format != '\0')
+				{
+					n += print_specifier(*format, args);
+					} else {
+					write(1, "%", 1);
+					break;
+				}
 		}
 		else
 		{
