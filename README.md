@@ -38,7 +38,7 @@
 
 	* _strlen.c - Calculates the length of a string.
 	
-	* _cs.c - character and string format specifiers.
+	* _cs.c - Character and string format specifiers.
 
 	* _hex.c - Hexadecimal format specifiers.
 
