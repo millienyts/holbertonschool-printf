@@ -30,8 +30,30 @@ Prints decimal numbers.
 .B %i
 Prints integers.
 
+.TP 
+.B %s
+String
+
+.TP
+%u
+Unsigned decimal integer
+
+
 .SH EXAMPLES
 .B _printf("Feliz Navidad\n");
+
+# Output: Feliz, Navidad!
+
+.B _printf "Number: %d\n" 42
+
+# Output: Number: 42
+
+
+.SH SEE ALSO
+
+.B man sprintf: Formatted output to a string
+.B man fprintf: Formatted output to a file
+
 
 .SH AUTHOR
 Millieny Torres Santa & Adriel Ortiz Sanchez
