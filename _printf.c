@@ -18,7 +18,9 @@ int _printf(const char *format, ...)
 				if (*format != '\0')
 				{
 					n += print_specifier(*format, args);
-					} else {
+					}
+					else
+					{
 					write(1, "%", 1);
 					break;
 				}
