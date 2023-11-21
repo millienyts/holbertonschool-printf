@@ -5,10 +5,10 @@
 int print_int(va_list args)
 {
 	int value = va_arg(args, int);
-	char buffer[12];
-	int l = int_l(value, buffer);
+	char buffer[20];
+	int l = int_l(value);
 
-	write(1, buffer, l);
+	_str(value, buffer);
 
-	return (l);
+	return write(1, buffer, l);
 }
