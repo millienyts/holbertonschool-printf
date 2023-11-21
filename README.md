@@ -28,15 +28,15 @@
 
 # File Name
 
-	_printf.c -  Manages the array that encompasses all the format specifiers, and it also serves as the starting point for the execution of the function. 
+	* _printf.c -  Manages the array that encompasses all the format specifiers, and it also serves as the starting point for the execution of the function. 
 
-	functions.c - This is the location where we have organized all the auxiliary functions utilized throughout our code.
+	* functions.c - This is the location where we have organized all the auxiliary functions utilized throughout our code.
 
-	main.h - The header file we used that serves as a repository for our prototypes and includes declarations for both our struct and the standard libraries utilized.
+	* main.h - The header file we used that serves as a repository for our prototypes and includes declarations for both our struct and the standard libraries utilized.
 
-	man_3_printf - The man page we created for our _printf.c function. 
+	* man_3_printf - The man page we created for our _printf.c function. 
 
-	_strlen.c - Calculates the length of a string.
+	* _strlen.c - Calculates the length of a string.
 
 # Credits
 
