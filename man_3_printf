@@ -44,9 +44,9 @@ Unsigned decimal integer
 
 # Output: Feliz, Navidad!
 
-.B _printf "Number: %d\n" 42
+.B _printf "Number: %d\n" 50
 
-# Output: Number: 42
+# Output: Number: 50
 
 
 .SH SEE ALSO
