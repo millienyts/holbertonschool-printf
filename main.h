@@ -18,5 +18,6 @@ int print_octal(va_list args);
 int print_hexadecimal(va_list args, char specifier);
 int print_pointer(va_list args);
 int print_specifier(char specifier, va_list args);
+int _strlen(const char *s);
 
 #endif
