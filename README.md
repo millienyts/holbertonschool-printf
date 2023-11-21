@@ -1,30 +1,32 @@
-# holbertonschool-printf
-<<<<<<< HEAD
- Description
+# C - printf
+
+# Description
 
 In this project we create our printf function found in the C programming language.
 
 
-Format String
+# Format String
 
-%c: Print a single character.
+In programming, a format string is a string that contains placeholders or format specifiers, which are used to represent values that will be substituted into the string at runtime.
+
+# %c: Print a single character.
 
 char myChar = 'A';
 printf("Character: %c\n", myChar);
 
 
-%s: Print a string.
+# %s: Print a string.
 
 char myString[] = "Hello, World!";
 printf("String: %s\n", myString);
 
 
-%%: Print a percent sign.
+# %%: Print a percent sign.
 
 printf("This is a percent sign: %%\n");
 
 
-File Name
+# File Name
 
 _printf.c -  manages the array that encompasses all the format specifiers, and it also serves as the starting point for the execution of the function. 
 
@@ -34,10 +36,6 @@ main.h - The header file we used that serves as a repository for our prototypes 
 
 man_3_printf - The man page we created for our _printf.c function. 
 
-=======
-C - printf
->>>>>>> main
-
-Credits
+# Credits
 
 Millieny Torres Santa & Adriel Ortiz Sanchez
