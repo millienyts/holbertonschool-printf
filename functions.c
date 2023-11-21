@@ -20,14 +20,6 @@ int print_percent(va_list args)
     return write(1, "%", 1);
 }
 
-int print_int(va_list args)
-{
-    int value = va_arg(args, int);
-    char buffer[20];
-    int length = sprintf(buffer, "%d", value);
-    return write(1, buffer, length);
-}
-
 int print_unsigned(va_list args)
 {
     unsigned int value = va_arg(args, unsigned int);
