@@ -37,6 +37,28 @@
 	* man_3_printf - The man page we created for our _printf.c function. 
 
 	* _strlen.c - Calculates the length of a string.
+	
+	* _cs.c - character and string format specifiers.
+
+	* _hex.c - Hexadecimal format specifiers.
+
+	* _lhex.c - Lowercase hexadecimal format specifiers.
+
+	* _loct.c - Octal format specifiers.
+
+	* _lphex.c - Lowercase hexadecimal format specifiers with a leading '0x'.
+
+	* _lstr.c - Long string format specifiers.
+
+	* _lunsstr.c - Long unsigned string format specifiers.
+
+	* _oct.c - Octal format specifiers.
+
+	* _p.c - Pointer format specifiers.
+
+	* _str.c - String format specifiers.
+
+	* _uns.c - unsigned integer format specifiers.
 
 # Credits
 
