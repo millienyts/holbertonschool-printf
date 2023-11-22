@@ -9,6 +9,8 @@ int print_hexadecimal(va_list args, char specifier)
 	int l = hex_l(value);
 
 	_hex(value, buffer, specifier);
+	
+	custom_write(buffer);
 
-	return write(1, buffer, l);
+	return (l);
 }
