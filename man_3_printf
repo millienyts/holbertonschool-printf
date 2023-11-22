@@ -40,11 +40,11 @@ Unsigned decimal integer
 
 
 .SH EXAMPLES
-.B _printf("Feliz Navidad\n");
+.B _printf "Feliz ,Navidad \\n"
 
 # Output: Feliz, Navidad!
 
-.B _printf "Number: %d\n" 50
+.B _printf "Number: %d\\n" 50
 
 # Output: Number: 50
 
