@@ -6,7 +6,7 @@
 .B #include "main.h"
 
 .SH DESCRIPTION
-The print command is used to print a file directly without using a Windows application that supports printing it sends the contents of the active window. 
+_printf command is used to print a file directly without using a Windows application that supports printing it sends the contents of the active window. 
 
 .SH CONVERSION SPECIFIERS
 
