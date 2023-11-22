@@ -28,6 +28,7 @@ void _octal(unsigned int value, char *buffer);
 int print_hexadecimal(va_list args, char specifier);
 int hex_l(unsigned int value);
 void _hex(unsigned int value, char *buffer, char specifier);
+void custom_write(const char *str);
 
 int print_pointer(va_list args);
 int p_l(void *ptr __attribute__((unused)));
