@@ -13,16 +13,19 @@ int int_l(int value)
 	return l;
 }
 
-void _str(int value, char *buffer)
-{
-	int l = int_l(value);
+void _str(int value, char *buffer) {
+    int l = int_l(value);
 
-	buffer[l] = '\0';
-	do
-	{
-	l--;
-	buffer[l] = '0' + value % 10;
-	value /= 10;
-	}
-	while (l > 0);
+    buffer[l] = '\0';
+    if (value < 0) {
+        buffer[0] = '-';
+        value = -value;
+	write(1, "-", 1);
+    }
+
+    do {
+        l--;
+        buffer[l] = '0' + value % 10;
+        value /= 10;
+    } while (l >= (value < 0 ? 1 : 0));
 } 
