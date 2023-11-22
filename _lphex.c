@@ -4,31 +4,27 @@
 
 int p_l(void *ptr __attribute__((unused)))
 {
-	const int p_size = sizeof(void *) * 2;
-	int i;
-	int l = 1;
-
-	for (i = 0; i < p_size; ++i)
-	{
-	l *= 16;
-	}
-	
-	return (l);
+	return sizeof(void *) * 2 + 2;
 }
 
-void p_to_hex(void *ptr, char *buffer)
-{
-	int l = p_l(ptr);
-	int i;
+void p_to_hex(void *ptr, char *buffer) {
+    const int p_size = sizeof(void *) * 2;
+    int i;
+    int lZ = 1;
 
-	buffer[l] = '\0';
+    buffer[p_size + 1] = '\0';
 
-	for (i = l - 1; i >= 0; --i)
-	{
+    buffer[0] = '0';
+    buffer[1] = 'x';
 
-	int nibble = ((uintptr_t)ptr) & 0xF;
-
-	buffer[i] = (nibble < 10) ? ('0' + nibble) : ('a' + nibble - 10);
-	ptr = (void *)((uintptr_t)ptr >> 4);
-	}
+    for (i = 0; i < p_size; ++i) {
+        int nibble = ((uintptr_t)ptr >> ((p_size - i - 1) * 4)) & 0xF;
+        
+        if (nibble != 0 || !lZ) {
+            buffer[i + 2] = (nibble < 10) ? ('0' + nibble) : ('a' + nibble - 10);
+            lZ = 0;
+        } else {
+            buffer[i + 2] = ' ';
+        }
+    }
 }

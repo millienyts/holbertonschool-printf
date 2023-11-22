@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
 #include <unistd.h>
-#include <stddef.h>
 
 int hex_l(unsigned int value)
 {
