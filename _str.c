@@ -1,6 +1,8 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdio.h>
+
 /**
  * print_int - Handles the 'd' and 'i' format specifiers for _printf.
  * @args: A va_list of arguments containing the integer to be printed.
@@ -8,11 +10,12 @@
  */
 int print_int(va_list args)
 {
-        int value = va_arg(args, int);
-        char buffer[20];
-        int l = int_l(value);
+	int value = va_arg(args, int);
+	char buffer[20];
+	int length = sprintf(buffer, "%d", value);
 
-        _str(value, buffer);
+	write(1, buffer, length);
 
-        return (write(1, buffer, l));
+	return length;
 }
+
