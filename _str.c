@@ -49,7 +49,6 @@ void _str(int value, char *buffer)
     {
         buffer[0] = '-';
         value = -value;
-	write(1, "-", 1);
     }
 
     do
@@ -59,4 +58,3 @@ void _str(int value, char *buffer)
         value /= 10;
     } while (l >= (value < 0 ? 1 : 0));
 }
-
