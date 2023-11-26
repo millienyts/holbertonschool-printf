@@ -21,6 +21,7 @@ int print_string(va_list args)
 {
 	const char *s = va_arg(args, const char *);
 	size_t l;
+
 	if (s == NULL)
 	{
 	s = "(null)";
@@ -28,7 +29,7 @@ int print_string(va_list args)
 
 	l = _strlen(s);
 
-	return write(1, s, l);
+	return (write(1, s, l));
 }
 /**
  * print_percent - Prints a percent sign to the standard output.

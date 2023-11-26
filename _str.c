@@ -12,10 +12,10 @@ int print_int(va_list args)
 {
 	int value = va_arg(args, int);
 	char buffer[20];
-	int length = sprintf(buffer, "%d", value);
+	int l = sprintf(buffer, "%d", value);
 
-	write(1, buffer, length);
+	write(1, buffer, l);
 
-	return length;
+	return (l);
 }
 

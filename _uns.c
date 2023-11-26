@@ -2,11 +2,11 @@
 #include <unistd.h>
 #include <stdarg.h>
 /**
- * print_unsigned - Handles the 'u' format specifier for _printf.
+ * print_uns - Handles the 'u' format specifier for _printf.
  * @args: A va_list of arguments containing the unsigned integer to be printed.
  * Return: The number of characters printed.
  */
-int print_unsigned(va_list args)
+int print_uns(va_list args)
 {
 	unsigned int value = va_arg(args, unsigned int);
 	char buffer[20];

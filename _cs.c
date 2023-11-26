@@ -22,7 +22,7 @@ int print_specifier(char specifier, va_list args)
 	case 'i':
 		return (print_int(args));
 	case 'u':
-		return (print_unsigned(args));
+		return (print_uns(args));
 	case 'o':
 		return (print_octal(args));
 	case 'x':
@@ -33,7 +33,6 @@ int print_specifier(char specifier, va_list args)
 	default:
 		write(1, "%", 1);
 		write(1, &specifier, 1);
-
 		return (2);
 	}
 }

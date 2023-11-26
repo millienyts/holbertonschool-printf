@@ -17,7 +17,7 @@ int print_int(va_list args);
 int int_l(int value);
 void _str(int value, char *buffer);
 
-int print_unsigned(va_list args);
+int print_uns(va_list args);
 int uns_int_l(unsigned int value);
 void uns_str(unsigned int value, char *buffer);
 
