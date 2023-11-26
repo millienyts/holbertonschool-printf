@@ -35,8 +35,7 @@ int p_l(void *ptr __attribute__((unused)));
 void p_to_hex(void *ptr, char *buffer);
 
 int print_specifier(char specifier, va_list args);
-int _strlen(const char *s);
-
+size_t _strlen(const char *s);
 
 int _putchar(char c);
 #endif

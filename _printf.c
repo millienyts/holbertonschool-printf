@@ -9,6 +9,13 @@ int _printf(const char *format, ...)
 	va_list args;
 	int n = 0;
 
+	if (format == NULL)
+	{
+	write(1, "(null format)", 13);
+
+	return (-1);
+	}
+
 	va_start(args, format);
 	while (*format != '\0')
 	{

@@ -5,14 +5,14 @@
   *
   * Return: String length
   */
-int _strlen(const char *s)
+size_t _strlen(const char *s)
 {
-	int c = 0;
+    size_t l = 0;
 
-	for (; *s != '\0'; s++)
-	{
-		c++;
-	}
+    while (s[l] != '\0')
+    {
+        l++;
+    }
 
-	return (c);
+    return (l);
 }

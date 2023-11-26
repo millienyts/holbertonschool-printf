@@ -20,9 +20,15 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
 	const char *s = va_arg(args, const char *);
-	size_t len = (s != NULL) ? _strlen(s) : 6;
+	size_t l;
+	if (s == NULL)
+	{
+	s = "(null)";
+	}
 
-	return (write(1, s, len));
+	l = _strlen(s);
+
+	return write(1, s, l);
 }
 /**
  * print_percent - Prints a percent sign to the standard output.
@@ -35,5 +41,3 @@ int print_percent(va_list args)
 
 	return (write(1, "%", 1));
 }
-
-
