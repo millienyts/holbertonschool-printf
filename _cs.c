@@ -33,6 +33,7 @@ int print_specifier(char specifier, va_list args)
 	default:
 		write(1, "%", 1);
 		write(1, &specifier, 1);
+
 		return (2);
 	}
 }
